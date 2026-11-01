@@ -11,7 +11,7 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="جنّة — رفيقك اليومي في العبادات والأذكار">
   <meta property="og:description" content="مواقيت الصلاة، المصحف، الأذكار، السبحة والقبلة في تطبيق واحد.">
-  <meta property="og:image" content="screens/home_prayer_times.webp">
+  <meta property="og:image" content="screens/store/01_home.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
@@ -83,7 +83,7 @@
       box-shadow: 0 0 0 2px rgba(201,162,74,.55), 0 40px 80px -30px rgba(0,0,0,.65); position: relative; }
     .phone::before { content: ""; position: absolute; top: 18px; left: 50%; width: 30%; height: 18px; transform: translateX(-50%);
       background: #050807; border-radius: 999px; z-index: 1; opacity: .9; }
-    .phone img { width: 100%; height: 100%; object-fit: cover; border-radius: 33px; }
+    .phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 33px; }
 
     /* ---------- Sections ---------- */
     section { padding-block: 96px; }
@@ -121,10 +121,13 @@
       scrollbar-width: thin; scrollbar-color: var(--gold) transparent; }
     .gallery::-webkit-scrollbar { height: 8px; }
     .gallery::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 8px; }
-    .shot { flex: 0 0 240px; scroll-snap-align: center; text-align: center; }
+    .shot { flex: 0 0 260px; scroll-snap-align: center; text-align: center; }
     .shot .phone { width: 100%; border-radius: 36px; padding: 8px; }
     .shot .phone img { border-radius: 29px; }
     .shot .phone::before { top: 15px; height: 14px; }
+    .shot.poster { flex-basis: 260px; }
+    .shot.poster img { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 28px;
+      box-shadow: 0 0 0 1px rgba(201,162,74,.45), 0 30px 60px -28px rgba(0,0,0,.6); }
     .shot figcaption { margin-top: 16px; font-weight: 800; font-size: 17px; }
     .shot figcaption small { display: block; color: var(--muted); font-weight: 500; font-size: 14px; }
     .gallery-nav { display: flex; justify-content: center; gap: 12px; }
@@ -148,6 +151,21 @@
     .checks { list-style: none; margin-top: 22px; display: grid; gap: 12px; }
     .checks li { display: flex; gap: 12px; align-items: flex-start; font-weight: 600; }
     .checks svg { flex: none; width: 24px; height: 24px; padding: 4px; border-radius: 8px; background: var(--brand-soft); color: var(--brand); margin-top: 2px; }
+
+    /* ---------- Kids corner ---------- */
+    .kids-wrap { background: linear-gradient(180deg, var(--surface-2), var(--bg)); }
+    .kids { display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: center; }
+    .kids .badge { display: inline-flex; padding: 4px 14px; border-radius: 999px; background: var(--gold-soft); color: #a7761b;
+      font-weight: 800; font-size: 14px; }
+    .kids-video { position: relative; width: 320px; aspect-ratio: 9 / 16; border-radius: 36px; overflow: hidden; background: #04301f;
+      box-shadow: 0 0 0 3px rgba(201,162,74,.7), 0 40px 80px -30px rgba(0,0,0,.65); }
+    .kids-video video { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .kids-screens { display: flex; justify-content: center; gap: 22px; margin-top: 64px; }
+    .kids-screens figure { width: 200px; text-align: center; }
+    .kids-screens .phone { width: 100%; border-radius: 32px; padding: 7px; }
+    .kids-screens .phone img { border-radius: 26px; }
+    .kids-screens .phone::before { top: 13px; height: 12px; }
+    .kids-screens figcaption { margin-top: 12px; font-weight: 800; font-size: 15px; }
 
     /* ---------- Privacy ---------- */
     .privacy { background: var(--surface); border: 1px solid var(--line); border-radius: 32px; padding: 44px;
@@ -206,6 +224,9 @@
       .cta { grid-template-columns: 1fr; text-align: center; padding: 44px 24px; }
       .cta .stores { justify-content: center; }
       .qr-card { display: none; }
+      .kids { grid-template-columns: 1fr; gap: 36px; text-align: center; justify-items: center; }
+      .kids-screens { flex-wrap: wrap; }
+      .kids-screens figure { width: 170px; }
       .stats .container { grid-template-columns: repeat(2, 1fr); }
       .stat:nth-child(3) { border-inline-start: 0; }
       .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
@@ -221,8 +242,11 @@
       .feature { display: grid; grid-template-columns: auto 1fr; gap: 0 16px; padding: 20px; }
       .feature .ic { grid-row: span 2; margin: 0; }
       .spot-visual .phone { width: 160px; }
-      .promo .spot-visual .phone { width: 250px; }
       .spot-visual .phone:nth-child(2) { margin-top: 40px; }
+      .promo .spot-visual .phone { width: 250px; }
+      .kids-video { width: min(300px, 100%); }
+      .kids-screens { gap: 14px; margin-top: 44px; }
+      .kids-screens figure { width: calc(50% - 7px); max-width: 170px; }
       .privacy { grid-template-columns: 1fr; text-align: center; padding: 32px 22px; justify-items: center; }
       .sticky { display: flex; }
       footer .container { justify-content: center; text-align: center; }
@@ -238,9 +262,10 @@
       <span>جنّة<small>رفيق العبادات والأذكار</small></span>
     </a>
     <nav class="nav-links" aria-label="الأقسام">
-      <a href="#video">فيديو التطبيق</a>
       <a href="#features">المميزات</a>
+      <a href="#video">فيديو التطبيق</a>
       <a href="#screens">لقطات التطبيق</a>
+      <a href="#kids">ركن الأطفال</a>
       <a href="#quran">المصحف</a>
       <a href="#privacy">الخصوصية</a>
     </nav>
@@ -272,8 +297,8 @@
       </div>
       <div class="hero-visual" aria-hidden="true">
         <div class="glow"></div>
-        <div class="phone back"><img src="screens/dark_mode.webp" alt=""></div>
-        <div class="phone front"><img src="screens/home_prayer_times.webp" alt=""></div>
+        <div class="phone back"><img src="screens/kids_stories.webp" alt=""></div>
+        <div class="phone front"><img src="screens/home.webp" alt=""></div>
       </div>
     </div>
   </div>
@@ -374,22 +399,52 @@
       </div>
     </div>
     <div class="gallery" id="gallery" tabindex="0" aria-label="لقطات من التطبيق">
-      <figure class="shot"><div class="phone"><img loading="lazy" src="screens/home_prayer_times.webp" alt="الشاشة الرئيسية ومواقيت الصلاة"></div><figcaption>الرئيسية<small>مواقيت الصلاة والعدّ التنازلي</small></figcaption></figure>
-      <figure class="shot"><div class="phone"><img loading="lazy" src="screens/quran_mushaf.webp" alt="مصحف المدينة"></div><figcaption>مصحف المدينة<small>604 صفحات كالمصحف المطبوع</small></figcaption></figure>
+      <figure class="shot poster"><img loading="lazy" src="screens/store/01_home.webp" alt="الرئيسية" width="720" height="1280"><figcaption>الرئيسية<small>مواقيت الصلاة وعباداتك اليومية</small></figcaption></figure>
+      <figure class="shot poster"><img loading="lazy" src="screens/store/02_quran.webp" alt="المصحف الشريف" width="720" height="1280"><figcaption>المصحف الشريف<small>برسم مصحف المدينة مع التلاوة</small></figcaption></figure>
       <figure class="shot"><div class="phone"><img loading="lazy" src="screens/quran_ayah_actions.webp" alt="أدوات الآية"></div><figcaption>اضغط على الآية<small>استماع وتكرار وتفسير وقراءات</small></figcaption></figure>
       <figure class="shot"><div class="phone"><img loading="lazy" src="screens/quran_tafseer.webp" alt="التفسير الميسر"></div><figcaption>التفسير الميسر<small>معنى كل آية بأسلوب سهل</small></figcaption></figure>
       <figure class="shot"><div class="phone"><img loading="lazy" src="screens/quran_share.webp" alt="مشاركة الآية"></div><figcaption>شارك الآية<small>بصوت القارئ على واتساب وفيسبوك</small></figcaption></figure>
       <figure class="shot"><div class="phone"><img loading="lazy" src="screens/quran_night.webp" alt="المصحف ليلاً"></div><figcaption>المصحف ليلاً<small>قراءة مريحة في الظلام</small></figcaption></figure>
-      <figure class="shot"><div class="phone"><img loading="lazy" src="screens/quran_reciters.webp" alt="اختيار القارئ"></div><figcaption>أشهر القرّاء<small>33 تلاوة بروايات متعددة</small></figcaption></figure>
-      <figure class="shot"><div class="phone"><img loading="lazy" src="screens/azkar_tracker.webp" alt="الأذكار والأوراد"></div><figcaption>الأذكار والأوراد<small>تابع وردك اليومي</small></figcaption></figure>
-      <figure class="shot"><div class="phone"><img loading="lazy" src="screens/digital_tasbeeh.webp" alt="السبحة الإلكترونية"></div><figcaption>السبحة الإلكترونية<small>بالصوت والاهتزاز</small></figcaption></figure>
-      <figure class="shot"><div class="phone"><img loading="lazy" src="screens/qibla_compass.webp" alt="بوصلة القبلة"></div><figcaption>بوصلة القبلة<small>اتجاه دقيق للكعبة</small></figcaption></figure>
-      <figure class="shot"><div class="phone"><img loading="lazy" src="screens/adhan_player.webp" alt="مشغل الأذان"></div><figcaption>الأذان<small>أصوات كبار المؤذنين</small></figcaption></figure>
-      <figure class="shot"><div class="phone"><img loading="lazy" src="screens/dark_mode.webp" alt="الوضع الليلي"></div><figcaption>الوضع الليلي<small>راحة لعينك ليلاً</small></figcaption></figure>
+      <figure class="shot poster"><img loading="lazy" src="screens/store/03_stats.webp" alt="تابع تقدّمك" width="720" height="1280"><figcaption>تابع تقدّمك<small>إحصائيات وتقارير لعباداتك</small></figcaption></figure>
+      <figure class="shot poster"><img loading="lazy" src="screens/store/04_prayers.webp" alt="أذان الحرمين" width="720" height="1280"><figcaption>أذان الحرمين<small>تنبيه عند كل صلاة</small></figcaption></figure>
+      <figure class="shot poster"><img loading="lazy" src="screens/store/05_adhkar.webp" alt="الأذكار والأوراد" width="720" height="1280"><figcaption>الأذكار والأوراد<small>عدّاد ودرجات لكل ذكر</small></figcaption></figure>
+      <figure class="shot poster"><img loading="lazy" src="screens/store/06_kids.webp" alt="ركن الأطفال" width="720" height="1280"><figcaption>ركن الأطفال<small>قصص وقرآن بصوت عمر</small></figcaption></figure>
+      <figure class="shot poster"><img loading="lazy" src="screens/store/07_qibla.webp" alt="اتجاه القبلة" width="720" height="1280"><figcaption>اتجاه القبلة<small>بوصلة ذكية في أي مكان</small></figcaption></figure>
+      <figure class="shot poster"><img loading="lazy" src="screens/store/08_tasbeeh.webp" alt="السبحة الإلكترونية" width="720" height="1280"><figcaption>السبحة الإلكترونية<small>سبّح بلمسة واجمع الدرجات</small></figcaption></figure>
     </div>
     <div class="gallery-nav">
       <button type="button" data-dir="1" aria-label="السابق"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
       <button type="button" data-dir="-1" aria-label="التالي"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    </div>
+  </section>
+
+  <!-- Kids corner -->
+  <section id="kids" class="kids-wrap">
+    <div class="container">
+      <div class="kids reveal">
+        <div class="spot-text">
+          <span class="badge">إضافة جديدة</span>
+          <h3>ركن الأطفال في جنّة</h3>
+          <p>القرآن والأنبياء والسيرة والمسابقات في مكان واحد، يتعلّم فيه طفلك ويجمع النجوم بصوت عمر.</p>
+          <ul class="checks">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>علّم طفلك القرآن: آيةً آية بصوت الشيخ، يردّدها حتى يحفظها</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>حكايات الأنبياء: قصص ممتعة يسمعها بصوت عمر ويتعلّم منها القيم</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>رحلة مع النبي ﷺ: السيرة النبوية للأطفال في ٨ مراحل</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>مسابقة الأطفال: يسمع السؤال ويختار الإجابة ويجمع النجوم</li>
+          </ul>
+        </div>
+        <div class="kids-video">
+          <video controls playsinline preload="none" poster="screens/kids/slide0.webp" aria-label="فيديو ركن الأطفال">
+            <source src="video/kids_corner.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <div class="kids-screens reveal">
+        <figure><div class="phone"><img loading="lazy" src="screens/kids/m0_a.webp" alt="تحفيظ القرآن للأطفال"></div><figcaption>تحفيظ القرآن</figcaption></figure>
+        <figure><div class="phone"><img loading="lazy" src="screens/kids/m1_a.webp" alt="حكايات الأنبياء"></div><figcaption>حكايات الأنبياء</figcaption></figure>
+        <figure><div class="phone"><img loading="lazy" src="screens/kids/m2_a.webp" alt="رحلة مع النبي"></div><figcaption>رحلة مع النبي ﷺ</figcaption></figure>
+        <figure><div class="phone"><img loading="lazy" src="screens/kids/m3_b.webp" alt="مسابقة الأطفال"></div><figcaption>مسابقة الأطفال</figcaption></figure>
+      </div>
     </div>
   </section>
 
@@ -410,7 +465,7 @@
           </ul>
         </div>
         <div class="spot-visual">
-          <div class="phone"><img loading="lazy" src="screens/quran_mushaf.webp" alt="مصحف المدينة"></div>
+          <div class="phone"><img loading="lazy" src="screens/quran.webp" alt="مصحف المدينة"></div>
           <div class="phone"><img loading="lazy" src="screens/quran_tafseer.webp" alt="التفسير الميسر"></div>
         </div>
       </div>
@@ -427,8 +482,8 @@
           </ul>
         </div>
         <div class="spot-visual">
-          <div class="phone"><img loading="lazy" src="screens/azkar_tracker.webp" alt="الأذكار"></div>
-          <div class="phone"><img loading="lazy" src="screens/digital_tasbeeh.webp" alt="السبحة"></div>
+          <div class="phone"><img loading="lazy" src="screens/adhkar.webp" alt="الأذكار"></div>
+          <div class="phone"><img loading="lazy" src="screens/tasbeeh.webp" alt="السبحة"></div>
         </div>
       </div>
 
@@ -444,8 +499,8 @@
           </ul>
         </div>
         <div class="spot-visual">
-          <div class="phone"><img loading="lazy" src="screens/qibla_compass.webp" alt="القبلة"></div>
-          <div class="phone"><img loading="lazy" src="screens/adhan_player.webp" alt="الأذان"></div>
+          <div class="phone"><img loading="lazy" src="screens/qibla.webp" alt="القبلة"></div>
+          <div class="phone"><img loading="lazy" src="screens/adhan.webp" alt="الأذان"></div>
         </div>
       </div>
     </div>
